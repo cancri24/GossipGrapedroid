@@ -4,7 +4,7 @@ import static mobile.cse.gossipgrapedroid.MainActivity.rand;
 
 class Gossip {
     static private String[] locations = {"in the cafe", "in the men's room", "in the women's room", "on the roof"};
-    static private String[] times = {"yesterday", "last week", "last night", ""};
+    static private String[] times = {"yesterday", "last week", "last night", "this morning", "a few months ago"};
 
     static String getGossip(String subjectType) {
         Subject subject;
