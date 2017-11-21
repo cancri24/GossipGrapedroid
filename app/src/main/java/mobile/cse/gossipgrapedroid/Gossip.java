@@ -1,5 +1,7 @@
 package mobile.cse.gossipgrapedroid;
 
+import android.widget.RelativeLayout;
+
 import static mobile.cse.gossipgrapedroid.MainActivity.rand;
 
 class Gossip {

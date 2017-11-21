@@ -11,7 +11,6 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     public static Random rand = new Random();
     private String gossipType = "both";
-    String theNews;
     TextView txView;
 
     @Override
@@ -46,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void generateGossip(View view) {
-        theNews = Gossip.getGossip(gossipType);
-        txView.setText(theNews);
+        txView.setText(Gossip.getGossip(gossipType));
     }
 }

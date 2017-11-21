@@ -1,6 +1,7 @@
 package mobile.cse.gossipgrapedroid;
 
 //edited by Eleanor
+
 import static mobile.cse.gossipgrapedroid.MainActivity.rand;
 
 class Person implements Subject {
