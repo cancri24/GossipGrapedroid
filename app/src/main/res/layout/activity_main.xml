@@ -8,13 +8,12 @@
 
     <TextView
         android:id="@+id/gossipBox"
-        android:layout_width="351dp"
-        android:layout_height="231dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="335dp"
+        android:layout_height="135dp"
         android:text="@string/defaultgossip"
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,29 +88,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:onClick="generateGossip"
         android:text="Generate Gossip"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/radioGroup"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.089" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gossipBox"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/shockImage"
-        android:layout_width="143dp"
-        android:layout_height="95dp"
+        android:layout_width="213dp"
+        android:layout_height="111dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gossipBox"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.02"
         app:srcCompat="@drawable/shock1" />
 
 </android.support.constraint.ConstraintLayout>

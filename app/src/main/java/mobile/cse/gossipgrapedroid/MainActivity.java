@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.ImageView;
 
 import java.util.Random;
 
@@ -13,12 +14,14 @@ public class MainActivity extends AppCompatActivity {
     private String gossipType = "both";
     String theNews;
     TextView txView;
+    ImageView shockImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         txView = (TextView) findViewById(R.id.gossipBox);
+        shockImageView = (ImageView) findViewById(R.id.shockImage);
     }
 
     public void onRadioButtonClicked(View view) {
@@ -48,5 +51,22 @@ public class MainActivity extends AppCompatActivity {
     public void generateGossip(View view) {
         theNews = Gossip.getGossip(gossipType);
         txView.setText(theNews);
+        Random r = new Random();
+        int v = r.nextInt(5);
+        if (v == 1){
+            shockImageView.setImageResource(R.drawable.shock1);
+        }
+        if (v == 2){
+            shockImageView.setImageResource(R.drawable.shock2);
+        }
+        if (v == 3){
+            shockImageView.setImageResource(R.drawable.shock3);
+        }
+        if (v == 4){
+            shockImageView.setImageResource(R.drawable.shock4);
+        }
+        if (v == 5){
+            shockImageView.setImageResource(R.drawable.shock5);
+        }
     }
 }
