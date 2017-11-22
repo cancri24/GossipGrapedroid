@@ -11,6 +11,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     public static Random rand = new Random();
     private String gossipType = "both";
+    private boolean swarmMode = false;
     TextView txView;
 
     @Override
@@ -45,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void generateGossip(View view) {
-        txView.setText(Gossip.getGossip(gossipType));
+        txView.setText(Gossip.getGossip(gossipType, swarmMode));
+    }
+
+    public void toggleSwarmMode(View view) {
+        swarmMode = !swarmMode;
     }
 }

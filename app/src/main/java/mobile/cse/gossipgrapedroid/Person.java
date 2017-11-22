@@ -17,21 +17,22 @@ class Person implements Subject {
     private String firstName;
     private String lastName;
 
-    Person() {
+    Person(boolean swarmMode) {
         firstName = nameStart[rand.nextInt(nameStart.length-1)] + nameMiddle[rand.nextInt(nameMiddle.length-1)] + nameEnd[rand.nextInt(nameEnd.length-1)];
         lastName = nameStart[rand.nextInt(lastNameStart.length-1)] + lastNameMiddle[rand.nextInt(lastNameMiddle.length-1)] + lastNameEnd[rand.nextInt(lastNameEnd.length-1)];
         myPronouns = pronouns[rand.nextInt(pronouns.length-1)];
 
-        if(firstName.equals("Beebeebee") && lastName.equals("Beebeebee")) {
-            firstName = "Madame";
-            lastName = "Swarm";
-            myPronouns = pronouns[0];
-        }
+        if(firstName.equals("Beebeebee") && lastName.equals("Beebeebee")) makeSwarm();
+        if(swarmMode) makeSwarm();
     }
 
-//    public String getFirstName(){return firstName;}
-//    public String getLastName(){return lastName;}
     public String getName(){return firstName + " " + lastName;}
     String getGender(){return myPronouns;}
+
+    private void makeSwarm() {
+        firstName = "Madame";
+        lastName = "Swarm";
+        myPronouns = pronouns[0];
+    }
 
 }

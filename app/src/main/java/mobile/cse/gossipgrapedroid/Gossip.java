@@ -8,7 +8,7 @@ class Gossip {
     static private String[] locations = {"in the cafe", "in the men's room", "in the women's room", "on the roof"};
     static private String[] times = {"yesterday", "last week", "last night", "this morning", "a few months ago"};
 
-    static String getGossip(String subjectType) {
+    static String getGossip(String subjectType, boolean swarmMode) {
         Subject subject;
         String where = locations[rand.nextInt(locations.length)];
         String when = times[rand.nextInt(times.length)];
@@ -23,13 +23,13 @@ class Gossip {
                 break;
             case "person":
                 fate = rand.nextInt(5);
-                subject = new Person();
+                subject = new Person(swarmMode);
                 break;
             default:
                 int selectType = rand.nextInt(2);
                 if(selectType == 0) {
                     fate = rand.nextInt(5);
-                    subject = new Person();
+                    subject = new Person(swarmMode);
                     subjectType = "person";
                 }
                 else {
@@ -39,22 +39,22 @@ class Gossip {
                 }
                 break;
         }
-        theWord = chooseGossip(subjectType, fate);
+        theWord = chooseGossip(subjectType, fate, swarmMode);
         return Gossip.spread(subject.getName(), theWord.whatHappened(), where, when);
     }
 
     //selects a gossip subclass based on subjectType
-    static private Gossip chooseGossip(String subjectType, int fate) {
+    static private Gossip chooseGossip(String subjectType, int fate, boolean swarmMode) {
         switch (subjectType) {
             case "item":
-                if (fate == 0) return new ItemPersonInvolved();
+                if (fate == 0) return new ItemPersonInvolved(swarmMode);
                 else return new ItemNoPerson();
             case "person":
-                if (fate == 0) return new Adultery();
+                if (fate == 0) return new Adultery(swarmMode);
                 else if (fate == 1) return new Crime();
                 else if (fate == 2) return new TestCheat();
                 else if (fate == 3) return new Transfer();
-                else if (fate == 4) return new VictimCrime();
+                else if (fate == 4) return new VictimCrime(swarmMode);
         }
         return null;
     }

@@ -10,7 +10,7 @@ public class Item implements Subject {
     private String type;
     private String adj;
 
-    Item (){
+    Item() {
         type = Type[rand.nextInt(Type.length-1)];
         adj = Adjective[rand.nextInt(Adjective.length-1)];
     }
