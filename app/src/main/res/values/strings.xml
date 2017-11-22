@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">GossipGrapedroid</string>
     <string name="defaultgossip">I have so many juicy secrets. What would you like to know?</string>
+    <string name="title_activity_feedback">Feedback</string>
 </resources>

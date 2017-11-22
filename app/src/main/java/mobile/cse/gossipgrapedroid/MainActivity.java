@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.ImageView;
+import android.widget.EditText;
 
 import java.util.Random;
 
@@ -14,14 +15,18 @@ public class MainActivity extends AppCompatActivity {
     private String gossipType = "both";
     String theNews;
     TextView txView;
+    EditText feedbackTxtView;
+    TextView feedbackResponse;
     ImageView shockImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txView = (TextView) findViewById(R.id.gossipBox);
-        shockImageView = (ImageView) findViewById(R.id.shockImage);
+        txView = findViewById(R.id.gossipBox);
+        feedbackTxtView = findViewById(R.id.ugh);
+        feedbackResponse = findViewById(R.id.feedbackResponse);
+        shockImageView = findViewById(R.id.shockImage);
     }
 
     public void onRadioButtonClicked(View view) {
@@ -47,7 +52,24 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-
+    public void submitButtonClicked(View view){
+        String inputText = feedbackTxtView.getText().toString();
+        String responseText;
+        if (inputText.equals("yes")){
+            responseText = "glad you like it my dude";
+            feedbackResponse.setText(responseText);
+        }
+        if (inputText.equals("no")){
+            responseText = "well i don't care";
+            feedbackResponse.setText(responseText);
+        }
+    }
+    public void switchFeedbackButtonClicked(View view){
+        setContentView(R.layout.activity_feedback);
+    }
+    public void switchMainButtonClicked(View view){
+        setContentView(R.layout.activity_main);
+    }
     public void generateGossip(View view) {
         theNews = Gossip.getGossip(gossipType);
         txView.setText(theNews);
