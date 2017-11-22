@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/gossipBox"
-        android:layout_width="351dp"
-        android:layout_height="155dp"
+        android:layout_width="352dp"
+        android:layout_height="89dp"
         android:layout_marginTop="8dp"
         android:text="@string/defaultgossip"
         android:textAlignment="center"
@@ -19,10 +19,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/radioGroup"
@@ -90,27 +89,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginTop="8dp"
         android:onClick="generateGossip"
         android:text="Generate Gossip"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/radioGroup"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.089" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customName"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Switch
-        android:id="@+id/switch1"
-        android:layout_width="152dp"
+        android:id="@+id/swarmSwitch"
+        android:layout_width="186dp"
         android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
+        android:onClick="toggleSwarmMode"
         android:text="Swarm Mode"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="toggleSwarmMode" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/customName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

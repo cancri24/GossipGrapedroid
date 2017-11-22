@@ -8,13 +8,14 @@ class Gossip {
     static private String[] locations = {"in the cafe", "in the men's room", "in the women's room", "on the roof"};
     static private String[] times = {"yesterday", "last week", "last night", "this morning", "a few months ago"};
 
-    static String getGossip(String subjectType, boolean swarmMode) {
+    static String getGossip(String subjectType, boolean swarmMode, String name) {
         Subject subject;
         String where = locations[rand.nextInt(locations.length)];
         String when = times[rand.nextInt(times.length)];
         int fate;
         Gossip theWord;
 
+        //TODO: add switch to check for custom name (blank = random name)
         //generates subject and gossip based on subjectType
         switch (subjectType) {
             case "item":
