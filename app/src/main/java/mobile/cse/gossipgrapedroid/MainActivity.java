@@ -19,6 +19,17 @@ public class MainActivity extends AppCompatActivity {
     TextView feedbackResponse;
     ImageView shockImageView;
 
+    private void sayHi(String whosSayingHi) {
+        System.out.println(whosSayingHi);
+        System.out.println(rand);
+        System.out.println(gossipType);
+        System.out.println(theNews);
+        System.out.println(txView);
+        System.out.println(feedbackTxtView);
+        System.out.println(feedbackResponse);
+        System.out.println(shockImageView);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,11 +38,13 @@ public class MainActivity extends AppCompatActivity {
         feedbackTxtView = findViewById(R.id.ugh);
         feedbackResponse = findViewById(R.id.feedbackResponse);
         shockImageView = findViewById(R.id.shockImage);
+        sayHi("onCreate");
     }
 
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
+        sayHi("radio button");
 
         // Check which radio button was clicked
         switch(view.getId()) {
@@ -51,8 +64,10 @@ public class MainActivity extends AppCompatActivity {
                     gossipType = "both";
                 break;
         }
+        sayHi("radio button finished");
     }
     public void submitButtonClicked(View view){
+        sayHi("submit button");
         String inputText = feedbackTxtView.getText().toString();
         String responseText;
         if (inputText.equals("yes")){
@@ -66,13 +81,21 @@ public class MainActivity extends AppCompatActivity {
     }
     public void switchFeedbackButtonClicked(View view){
         setContentView(R.layout.activity_feedback);
+        sayHi("feedback button");
+    }
+    public void switchControlButtonClicked(View view){
+        setContentView(R.layout.activity_controls);
+        sayHi("control button");
     }
     public void switchMainButtonClicked(View view){
         setContentView(R.layout.activity_main);
     }
+    public void switchMainButtonClicked2(View view){
+        setContentView(R.layout.activity_main);
+    }
     public void generateGossip(View view) {
+        sayHi("generate gossip");
         theNews = Gossip.getGossip(gossipType);
-        txView.setText(theNews);
         Random r = new Random();
         int v = r.nextInt(5);
         if (v == 1){
@@ -90,5 +113,6 @@ public class MainActivity extends AppCompatActivity {
         if (v == 5){
             shockImageView.setImageResource(R.drawable.shock5);
         }
+        txView.setText(theNews);
     }
 }
