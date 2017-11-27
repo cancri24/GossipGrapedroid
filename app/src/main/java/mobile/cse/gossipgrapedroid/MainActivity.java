@@ -21,13 +21,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void sayHi(String whosSayingHi) {
         System.out.println(whosSayingHi);
-        System.out.println(rand);
-        System.out.println(gossipType);
-        System.out.println(theNews);
-        System.out.println(txView);
-        System.out.println(feedbackTxtView);
-        System.out.println(feedbackResponse);
-        System.out.println(shockImageView);
+        System.out.println("rand: " + rand);
+        System.out.println("gossipType: " +gossipType);
+        System.out.println("theNews: " +theNews);
+        System.out.println("theNews: " +txView);
+        System.out.println("theNews: " +feedbackTxtView);
+        System.out.println("theNews: " +feedbackResponse);
+        System.out.println("theNews: " +shockImageView);
     }
 
     @Override
@@ -89,9 +89,17 @@ public class MainActivity extends AppCompatActivity {
     }
     public void switchMainButtonClicked(View view){
         setContentView(R.layout.activity_main);
+        txView = findViewById(R.id.gossipBox);
+        feedbackTxtView = findViewById(R.id.ugh);
+        feedbackResponse = findViewById(R.id.feedbackResponse);
+        shockImageView = findViewById(R.id.shockImage);
     }
     public void switchMainButtonClicked2(View view){
         setContentView(R.layout.activity_main);
+        txView = findViewById(R.id.gossipBox);
+        feedbackTxtView = findViewById(R.id.ugh);
+        feedbackResponse = findViewById(R.id.feedbackResponse);
+        shockImageView = findViewById(R.id.shockImage);
     }
     public void generateGossip(View view) {
         sayHi("generate gossip");
