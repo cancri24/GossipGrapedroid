@@ -11,8 +11,8 @@ class Adultery extends Gossip {
     private String wifeRole;
 
     Adultery(boolean swarmMode) {
-        wife = new Person(swarmMode);
-        handmaid = new Person(swarmMode);
+        wife = new Person(swarmMode, "");
+        handmaid = new Person(swarmMode, "");
         switch (wife.getGender()) {
             case "female":
                 wifeRole = femRoles[rand.nextInt(1)];

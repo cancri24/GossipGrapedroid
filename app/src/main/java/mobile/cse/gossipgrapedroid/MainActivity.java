@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void generateGossip(View view) {
-        String name = customName.getText();
+        String name = String.valueOf(customName.getText());
         txView.setText(Gossip.getGossip(gossipType, swarmMode, name));
     }
 

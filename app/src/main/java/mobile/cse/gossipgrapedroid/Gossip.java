@@ -15,7 +15,6 @@ class Gossip {
         int fate;
         Gossip theWord;
 
-        //TODO: add switch to check for custom name (blank = random name)
         //generates subject and gossip based on subjectType
         switch (subjectType) {
             case "item":
@@ -24,13 +23,13 @@ class Gossip {
                 break;
             case "person":
                 fate = rand.nextInt(5);
-                subject = new Person(swarmMode);
+                subject = new Person(swarmMode, name);
                 break;
             default:
                 int selectType = rand.nextInt(2);
                 if(selectType == 0) {
                     fate = rand.nextInt(5);
-                    subject = new Person(swarmMode);
+                    subject = new Person(swarmMode, name);
                     subjectType = "person";
                 }
                 else {
