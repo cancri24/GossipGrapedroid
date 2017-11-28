@@ -5,6 +5,7 @@
     android:id="@+id/thescreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:background="#ffffff"
     tools:context="mobile.cse.gossipgrapedroid.MainActivity">
 
     <TextView
