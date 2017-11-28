@@ -34,11 +34,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        redeclareComponets();
+        sayHi("onCreate");
+    }
+    public void redeclareComponets(){
         txView = findViewById(R.id.gossipBox);
         feedbackTxtView = findViewById(R.id.ugh);
         feedbackResponse = findViewById(R.id.feedbackResponse);
         shockImageView = findViewById(R.id.shockImage);
-        sayHi("onCreate");
     }
 
     public void onRadioButtonClicked(View view) {
@@ -82,24 +85,20 @@ public class MainActivity extends AppCompatActivity {
     public void switchFeedbackButtonClicked(View view){
         setContentView(R.layout.activity_feedback);
         sayHi("feedback button");
+        redeclareComponets();
     }
     public void switchControlButtonClicked(View view){
         setContentView(R.layout.activity_controls);
         sayHi("control button");
+        redeclareComponets();
     }
     public void switchMainButtonClicked(View view){
         setContentView(R.layout.activity_main);
-        txView = findViewById(R.id.gossipBox);
-        feedbackTxtView = findViewById(R.id.ugh);
-        feedbackResponse = findViewById(R.id.feedbackResponse);
-        shockImageView = findViewById(R.id.shockImage);
+        redeclareComponets();
     }
     public void switchMainButtonClicked2(View view){
         setContentView(R.layout.activity_main);
-        txView = findViewById(R.id.gossipBox);
-        feedbackTxtView = findViewById(R.id.ugh);
-        feedbackResponse = findViewById(R.id.feedbackResponse);
-        shockImageView = findViewById(R.id.shockImage);
+        redeclareComponets();
     }
     public void generateGossip(View view) {
         sayHi("generate gossip");
