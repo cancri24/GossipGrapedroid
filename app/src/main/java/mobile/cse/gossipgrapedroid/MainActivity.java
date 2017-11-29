@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 try {
                     while (!isInterrupted()) {
-                        Thread.sleep(25);
+                        Thread.sleep(3);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
     public void generateGossip(View view) {
         String name = String.valueOf(customName.getText());
         theNews = Gossip.getGossip(gossipType, swarmMode, name);
+        counter = 0;
     }
 
     public void toggleSwarmMode(View view) {
