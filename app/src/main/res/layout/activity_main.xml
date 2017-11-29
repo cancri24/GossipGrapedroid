@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/gossipBox"
         android:layout_width="351dp"
-        android:layout_height="155dp"
+        android:layout_height="84dp"
         android:layout_marginTop="8dp"
         android:text="@string/defaultgossip"
         android:textAlignment="center"
@@ -18,10 +18,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintVertical_bias="0.006" />
 
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/radioGroup"
@@ -99,5 +98,31 @@
         app:layout_constraintEnd_toEndOf="@+id/radioGroup"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.089" />
+
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="307dp"
+        android:layout_height="145dp"
+        android:layout_above="@+id/btnImageChanger"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:cropToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gossipBox"
+        app:layout_constraintVertical_bias="0.018"
+        app:srcCompat="@drawable/btnomb" />
+
+    <Button
+        android:id="@+id/btnImageChanger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="New Kermit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivImage"
+        app:layout_constraintVertical_bias="0.03"
+        tools:layout_editor_absoluteX="0dp" />
 
 </android.support.constraint.ConstraintLayout>
