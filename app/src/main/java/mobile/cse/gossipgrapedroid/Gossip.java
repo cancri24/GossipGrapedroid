@@ -20,9 +20,11 @@ class Gossip {
                 subject = new Item();
                 break;
             case "person":
-                fate = rand.nextInt(5);
+                fate = rand.nextInt(3);
                 subject = new Person();
                 break;
+            case "none":
+                return "";
             default:
                 int selectType = rand.nextInt(2);
                 if(selectType == 0) {
@@ -34,7 +36,7 @@ class Gossip {
                     fate = rand.nextInt(2);
                     subject = new Item();
                     subjectType = "item";
-                }
+            }
                 break;
         }
         theWord = chooseGossip(subjectType, fate);

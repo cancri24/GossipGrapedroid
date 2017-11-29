@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import java.util.Random;
 
@@ -41,9 +42,14 @@ public class MainActivity extends AppCompatActivity {
                 if(checked)
                     //Both selected
                     gossipType = "both";
-                break;
+                    break;
+            case R.id.radioButton4:
+                if (checked)
+                    //Item Selected
+                    gossipType = "none";
+                    break;
         }
-    }
+        }
 
     public void generateGossip(View view) {
         theNews = Gossip.getGossip(gossipType);
